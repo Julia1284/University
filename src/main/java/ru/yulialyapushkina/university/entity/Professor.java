@@ -1,7 +1,24 @@
 package ru.yulialyapushkina.university.entity;
 
-public class Professor implements CommonAction, ProfessorAction{
-    Student student;
+public class Professor implements CommonAction, ProfessorAction {
+    private String surname;
+    private Student student;
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
     @Override
     public void goToUniversity() {
@@ -10,6 +27,6 @@ public class Professor implements CommonAction, ProfessorAction{
 
     @Override
     public void writingDissertation() {
-        System.out.println("Профессор пишет диссертацию");
+        System.out.println("Профессор пишет диссертацию,  ему помогает студент " + student.getSurname());
     }
 }
